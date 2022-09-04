@@ -1,19 +1,17 @@
-###
+### Login
 # @name login
 POST http://localhost:3000/users/auth/login
 Content-Type: application/json 
 
 {
-    "id": 3,
     "email": "maria@guess.com",
-    "username": "maria",
     "password": "guess"
 }
 
 ###
 @token = {{login.response.body.token}}
 
-###
+### Perfil
 GET  http://localhost:3000/users/profile
 Authorization: {{token}}
 
